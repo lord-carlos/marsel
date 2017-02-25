@@ -1,0 +1,5 @@
+nick = Marsel_test
+name = bla
+server = irc.freenode.net
+port = 6667
+channel = #marselmarsel
