@@ -35,6 +35,7 @@ public class Marsel extends ListenerAdapter {
                     if (time < 1) {
                         event.respond(": Spacken .. gib mir ne Ordentliche zahl.");
                     } else {
+                        event.respond("You will be notified in " + time + " minutes.");
                         Thread.sleep(1000 * 60 * time);
                         event.respond("Time is up");
                     }
