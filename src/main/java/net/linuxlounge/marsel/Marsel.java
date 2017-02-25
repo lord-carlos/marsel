@@ -26,9 +26,25 @@ public class Marsel extends ListenerAdapter {
             event.respond("pong!");
             return;
         }
-//        else if (event.getMessage().startsWith("!pizza")) {
-//
-//        }
+        else if (event.getMessage().startsWith("!pizza")) {
+            if (event.getMessage().trim().length() == 6) {
+                event.respond("Usage !pizza $minutes");
+            } else {
+                try {
+                    int time = Integer.parseInt(event.getMessage().substring(7).trim());
+                    if (time < 1) {
+                        event.respond(": Spacken .. gib mir ne Ordentliche zahl.");
+                    } else {
+                        Thread.sleep(1000 * 60 * time);
+                        event.respond("Time is up");
+                    }
+
+                } catch (NumberFormatException numberFormatException) {
+                    event.respond(": Spacken .. gib mir ne Ordentliche zahl.");
+                }
+            }
+            return;
+        }
 
         Matcher matcher = urlPattern.matcher(event.getMessage());
         while (matcher.find()) {
