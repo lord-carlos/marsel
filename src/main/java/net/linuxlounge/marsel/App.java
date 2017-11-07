@@ -47,6 +47,7 @@ public class App {
                 .addServer(server, port)
                 .setSocketFactory(new UtilSSLSocketFactory().trustAllCertificates())
                 .addAutoJoinChannel(channel)
+                .setAutoReconnect(true)
                 .buildConfiguration();
     }
 

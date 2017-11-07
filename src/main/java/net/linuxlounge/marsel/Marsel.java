@@ -1,5 +1,7 @@
 package net.linuxlounge.marsel;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.types.GenericMessageEvent;
 
@@ -63,7 +65,8 @@ public class Marsel extends ListenerAdapter {
             response = new URL(url).openStream();
             Scanner scanner = new Scanner(response);
             String responseBody = scanner.useDelimiter("\\A").next();
-            return responseBody.substring(responseBody.indexOf("<title>") + 7, responseBody.indexOf("</title>"));
+            Document doc = Jsoup.parse(responseBody);
+            return doc.title();
         } catch (IOException e) {
             e.printStackTrace();
         }
