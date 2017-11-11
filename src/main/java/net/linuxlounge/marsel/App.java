@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class App {
+    public static String VERSION = "0.0.2.2";
 
     public static void main(String[] args) throws IOException {
         List<Configuration> configs = new ArrayList<Configuration>();
