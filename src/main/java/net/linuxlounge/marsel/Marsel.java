@@ -48,7 +48,7 @@ public class Marsel extends ListenerAdapter {
             }
             return;
         } else if (event.getMessage().startsWith("!version")) {
-            event.respond("Current version is " + App.VERSION);
+            event.respond("Current version is " + PomReader.getVersion());
         }
 
         Matcher matcher = urlPattern.matcher(event.getMessage());
