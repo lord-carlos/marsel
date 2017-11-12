@@ -13,8 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Marsel extends ListenerAdapter {
+class Marsel extends ListenerAdapter {
     // Pattern for recognizing a URL, based off RFC 3986
+    @SuppressWarnings("Annotator")
     private static final Pattern urlPattern = Pattern.compile(
             "(?:^|[\\W])((ht|f)tp(s?):\\/\\/|www\\.)"
                     + "(([\\w\\-]+\\.){1,}?([\\w\\-.~]+\\/?)*"

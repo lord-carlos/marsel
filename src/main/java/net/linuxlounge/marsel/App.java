@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class App {
+class App {
 
     public static void main(String[] args) throws IOException {
-        List<Configuration> configs = new ArrayList<Configuration>();
+        List<Configuration> configs = new ArrayList<>();
         for (String arg : args) {
             Properties properties = loadProperties(arg);
             Configuration config = properties2configuration(properties);
@@ -38,7 +38,6 @@ public class App {
         String nick = properties.getProperty("nick");
         String server = properties.getProperty("server");
         int port = Integer.parseInt(properties.getProperty("port"));
-        String ssl = properties.getProperty("ssl");
         String channel = properties.getProperty("channel");
 
         return new Configuration.Builder()

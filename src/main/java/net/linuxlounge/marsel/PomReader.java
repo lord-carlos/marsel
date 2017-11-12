@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class PomReader {
+class PomReader {
 
     private static Model readModel() throws IOException, XmlPullParserException {
         MavenXpp3Reader reader = new MavenXpp3Reader();
